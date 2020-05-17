@@ -2,6 +2,7 @@
 # Created by https://www.gitignore.io/api/rails
 # Edit at https://www.gitignore.io/?templates=rails
 
+.DS_Store
 ### Rails ###
 *.rbc
 capybara-*.html
