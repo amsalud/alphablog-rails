@@ -1,3 +1,4 @@
+<%= link_to 'View All', articles_path %>
 <h1>Showing article details</h1>
 <p>
     <strong>Title: </strong>
@@ -7,3 +8,6 @@
     <strong>Descrition: </strong>
     <%= @article.description %>
 </p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> | 
+<%= link_to 'Delete', article_path(@article), method: :delete %>
