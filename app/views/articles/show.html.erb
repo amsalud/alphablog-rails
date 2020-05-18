@@ -1,13 +1,15 @@
-<h1>Showing article details</h1>
-<p>
-    <strong>Title: </strong>
-    <%= @article.title %>
-</p>
-<p>
-    <strong>Descrition: </strong>
-    <%= @article.description %>
-</p>
-
-<%= link_to 'Edit', edit_article_path(@article) %> | 
-<%= link_to 'Delete', article_path(@article), method: :delete, data: { confirm: 'Are you sure you want to delete this article?'} %> |
-<%= link_to 'Return to articles list', articles_path %>
+<div class="container">
+  <div class="card shadow mt-3 bg-white rounded">
+    <h5 class="card-header font-italic"><%= @article.title %></h5>
+    <div class="card-body">
+      <p class="card-text"><%= simple_format(@article.description) %></p>
+      <p class="font-italic">Posted by Aaron Mikhail Salud</p>
+      <%= link_to 'Edit', edit_article_path(@article), class: "btn btn-outline-info"  %>
+      <%= link_to 'Delete', article_path(@article), method: :delete, class: "btn btn-outline-danger" , data: { confirm: 'Are you sure you want to delete this article?'} %>
+      <%= link_to 'Back to Articles list', articles_path, class: "btn btn-outline-primary" %>
+    </div>
+    <div class="card-footer">
+      <small>Posted <%= time_ago_in_words(@article.created_at)%> ago</small>
+    </div>
+  </div>
+</div>
