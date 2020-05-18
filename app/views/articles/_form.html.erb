@@ -1,12 +1,5 @@
-<% if @article.errors.any? %>
-  <h2>The following errors prevented the article from being saved</h2>
-  <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
-<div class="card shadow-lg bg-white rounded mt-5">
+<%= render 'shared/errors'%>
+<div class="card shadow-lg bg-white rounded mt-3">
   <h5 class="card-header text-center"><%= header_title %></h5>
   <div class="card-body p-5">
     <%= form_with(model: @article, local: true)  do |f|%>
