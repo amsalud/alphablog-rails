@@ -6,25 +6,28 @@
     <% end %>
   </ul>
 <% end %>
-<div class="card shadow-lg p-5 bg-white rounded">
-  <%= form_with(model: @article, local: true)  do |f|%>
-    <div class="form-group row">
-      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg"><%= f.label :title%>:</label>
-      <div class="col-sm-10">
-        <%= f.text_field :title, class: "form-control form-control-lg", id:"title" %>
+<div class="card shadow-lg bg-white rounded mt-5">
+  <h5 class="card-header text-center"><%= header_title %></h5>
+  <div class="card-body p-5">
+    <%= form_with(model: @article, local: true)  do |f|%>
+      <div class="form-group row">
+        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg"><%= f.label :title%>:</label>
+        <div class="col-sm-10">
+          <%= f.text_field :title, class: "form-control form-control-lg", id:"title" %>
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg"><%= f.label :description%>:</label>
-      <div class="col-sm-10">
-        <%= f.text_area :description, class: "form-control form-control-lg", id:"description", rows: 10 %>
+      <div class="form-group row">
+        <label for="colFormLabelLg" class="col-sm-2 col-form-label col-form-label-lg"><%= f.label :description%>:</label>
+        <div class="col-sm-10">
+          <%= f.text_area :description, class: "form-control form-control-lg", id:"description", rows: 10 %>
+        </div>
       </div>
-    </div>
-    <div class="form-group row">
-      <div class="justify-center m-auto">
-        <%= f.submit class: "btn btn-success btn-lg" %>
-        <%= link_to 'Cancel', articles_path, class: "btn btn-warning btn-lg"%>
+      <div class="form-group row">
+        <div class="justify-center m-auto">
+          <%= f.submit class: "btn btn-success btn-lg" %>
+          <%= link_to 'Cancel', articles_path, class: "btn btn-warning btn-lg"%>
+        </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
