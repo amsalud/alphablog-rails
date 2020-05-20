@@ -1,0 +1,19 @@
+<div class="container">
+  <% @users.each do |user| %>
+    <div class="card my-3">
+      <div class="card-header text-center">
+        <h5><%= user.username %></h5>
+      </div>
+      <div class="card-body">
+        <%= gravatar_for user, size:200 %>
+        <div class="my-3 text-center">
+          <%= link_to 'View', user_path(user), class: "btn btn-outline-primary" %>
+          <%= link_to 'Edit', edit_user_path(user), class: "btn btn-outline-info"  %>
+        </div>
+      </div>
+      <div class="card-footer text-center">
+        <small >Joined <%= time_ago_in_words(user.created_at)%> ago</small>
+      </div>
+    </div>
+  <%end%>
+</div>
