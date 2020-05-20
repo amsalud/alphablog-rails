@@ -1,4 +1,7 @@
 <div class="container">
+  <div class="my-3">
+    <%= will_paginate @users, list_classes: %w(pagination justify-content-center), renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+  </div>
   <% @users.each do |user| %>
     <div class="card my-3">
       <div class="card-header text-center">
@@ -17,4 +20,7 @@
       </div>
     </div>
   <%end%>
+  <div class="my-3">
+    <%= will_paginate @users, list_classes: %w(pagination justify-content-center), renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+  </div>
 </div>
