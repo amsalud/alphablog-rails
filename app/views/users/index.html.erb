@@ -6,6 +6,7 @@
       </div>
       <div class="card-body">
         <%= gravatar_for user, size:200 %>
+        <p class="card-text text-center my-3"><%= pluralize(user.articles.count, "article")%></p>
         <div class="my-3 text-center">
           <%= link_to 'View', user_path(user), class: "btn btn-outline-primary" %>
           <%= link_to 'Edit', edit_user_path(user), class: "btn btn-outline-info"  %>
