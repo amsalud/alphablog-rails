@@ -11,10 +11,12 @@ class SessionsController < ApplicationController
     else
       flash.now[:alert] = "There was something wrong with your login credentials"  
       render 'new'
-    end
-        
+    end 
   end
 
   def destroy
+    session[:user_id] = nil
+    flash[:notice] = "Successfully logged out"
+    redirect_to root_path
   end
 end
