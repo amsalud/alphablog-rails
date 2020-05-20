@@ -1,6 +1,6 @@
   <% @articles.each do |article| %>
   <div class="card shadow mb-3 bg-white rounded">
-    <h5 class="card-header font-italic">Posted by <%= article.user.username if article.user %></h5>
+    <h5 class="card-header font-italic">Posted by <%= link_to article.user.username, user_path(article.user) if article.user %></h5>
     <div class="card-body">
       <h5><%= article.title %></h5>
       <p class="card-text"><%= truncate(article.description, length:100) %></p>
