@@ -1,24 +1,15 @@
-# README
+# AlphaBlog-rails
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a blog post web application built with Ruby on Rails
 
-Things you may want to cover:
+## Requirements
+- Ruby 2.7.1p83 or later
+- Rails 6 or later
+- Yarn package manager
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Setup Instuctions
+- Install rails dependencies using `bundle install` command
+- Use `yarn` to install JS dependencies
+- Run database migrations using `rails db:migrate`
+- Use `rails s` to run the server
+- Navigate to `http://localhost:3000` to access the UI
