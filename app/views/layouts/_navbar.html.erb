@@ -24,10 +24,14 @@
           Categories
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <% Category.limit(3).each do |category| %>
+            <%= link_to category.name, category_path(category), class: "dropdown-item"%>
+          <%end%>
+          <div class="dropdown-divider"></div>
           <%if logged_in? && current_user.admin?%>
             <%= link_to "Create new category", new_category_path, class: "dropdown-item"%>
           <%end%>
-          <%= link_to "View categories", categories_path, class: "dropdown-item"%>
+          <%= link_to "View more", categories_path, class: "dropdown-item"%>
         </div>
       </li>
     </ul>
