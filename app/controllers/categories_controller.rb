@@ -1,5 +1,5 @@
 class CategoriesController < ApplicationController
-  before_action :set_category, only: [:show, :edit, :update]
+  before_action :set_category, only: [:show, :edit, :update, :destroy]
   before_action :require_user, except: [:show, :index]
   before_action :require_admin, except: [:show, :index]
 
@@ -35,6 +35,13 @@ class CategoriesController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    if @category.destroy
+      flash[:notice] = "Category was deleted successfully"
+    end
+    redirect_to categories_path
   end
 
   private
