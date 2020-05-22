@@ -22,6 +22,7 @@ class CategoriesController < ApplicationController
   end
   
   def show
+    @articles = @category.articles
   end
 
   private
