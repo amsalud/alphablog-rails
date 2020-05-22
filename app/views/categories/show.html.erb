@@ -15,5 +15,11 @@
       <small>Created <%= time_ago_in_words(@category.created_at)%> ago</small>
     </div>
   </div>
+  <div class="my-3">
+    <%= will_paginate @articles, list_classes: %w(pagination justify-content-center), renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+  </div>
   <%= render 'articles/articles-list' %>
+  <div class="my-3">
+    <%= will_paginate @articles, list_classes: %w(pagination justify-content-center), renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+  </div>
 </div>
